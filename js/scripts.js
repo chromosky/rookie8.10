@@ -1,20 +1,20 @@
 //Tripple protected "Final Act" button
 
-document.addEventListener("DOMContentLoaded", function () {
-	var button = document.getElementsByClassName("button");
-	for (var i=0; i<3; i++) {
-		alert ("You will activate Countdown!!!");
-	}
-});
+var button = document.getElementsByClassName("button");
+console.log(button);	
 
-document.addEventListener("DOMContentLoaded", function () {
-	var button = document.getElementsByClassName("button");
-	for (var i=0; i<button.length; i++) {
-	var newElem = document.createElement("");
+for (var i=0; i<3; i++) {
+	alert ("You will activate Countdown!!!");
+}
 
-	newElem.innerText = "You will activate Countdown!!!";
 
-	alert(newElem);
-    }
+for (var i=0; i<button.length; i++) {
+	
+	var btn = button[i];
+    btn.addEventListener('click', function(e){
+	    var color = e.target.getAttribute('data-color');
+	    alert('Countdown - button_'+color);
 
-});
+    })
+
+};
